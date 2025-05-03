@@ -1,4 +1,7 @@
 import readline from "node:readline";
+import { state } from "./state.js";
+import { parseArgs } from "./utils/parseArgs.js";
+import { displayGoodbyeMessage, displayPrompt, displayWelcomeMessage } from "./ui.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -6,22 +9,30 @@ const rl = readline.createInterface({
   prompt: "> ",
 });
 
-rl.prompt();
+const processInput = async (input) => {
+  const trimmedInput = input.trim();
 
-rl.on("line", (line) => {
-  const trimmedLine = line.trim();
-
-  switch (trimmedLine) {
-    case "hello":
-      console.log("Hello, World!");
-      break;
-    case ".exit":
-      rl.close();
-      break;
-    default:
-      console.log(`Unknown command: ${trimmedLine}`);
+  if (trimmedInput === ".exit") {
+    rl.close();
+    return;
   }
-}).on("close", () => {
-  console.log("Exiting the program. Goodbye!");
-  process.exit(0);
-});
+};
+
+const runFileManager = () => {
+  const args = parseArgs();
+
+  state.setUsername(args.username);
+
+  displayWelcomeMessage();
+
+  displayPrompt();
+
+  rl.on("line", processInput);
+
+  rl.on("close", () => {
+    displayGoodbyeMessage();
+    process.exit(0);
+  });
+};
+
+runFileManager();
