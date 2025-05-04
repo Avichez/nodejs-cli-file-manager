@@ -2,7 +2,15 @@ import readline from "node:readline";
 import { state } from "./state.js";
 import { parseArgs } from "./utils/parseArgs.js";
 import { displayGoodbyeMessage, displayPrompt, displayWelcomeMessage } from "./ui.js";
-import { commandUp, commandCd, commandLs, commandCat, commandAdd, commandMkdir } from "./commands/index.js";
+import {
+  commandUp,
+  commandCd,
+  commandLs,
+  commandCat,
+  commandAdd,
+  commandMkdir,
+  commandRn,
+} from "./commands/index.js";
 
 const handleCommands = {
   up: commandUp,
@@ -10,7 +18,8 @@ const handleCommands = {
   ls: commandLs,
   cat: commandCat,
   add: commandAdd,
-  mkdir: commandMkdir
+  mkdir: commandMkdir,
+  rn: commandRn,
 };
 
 const rl = readline.createInterface({
