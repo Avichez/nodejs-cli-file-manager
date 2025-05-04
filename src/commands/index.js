@@ -1,8 +1,7 @@
-import { commandCd } from "./navigation/cd.js";
-import { commandUp } from "./navigation/up.js";
-import { commandLs } from "./navigation/ls.js";
+export { commandCd } from "./navigation/cd.js";
+export { commandUp } from "./navigation/up.js";
+export { commandLs } from "./navigation/ls.js";
 
-import { commandCat } from "./files/cat.js";
-import { commandAdd } from "./files/add.js";
-
-export { commandCd, commandUp, commandLs, commandCat, commandAdd };
+export { commandCat } from "./files/cat.js";
+export { commandAdd } from "./files/add.js";
+export { commandMkdir } from "./files/mkdir.js";
