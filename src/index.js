@@ -2,12 +2,13 @@ import readline from "node:readline";
 import { state } from "./state.js";
 import { parseArgs } from "./utils/parseArgs.js";
 import { displayGoodbyeMessage, displayPrompt, displayWelcomeMessage } from "./ui.js";
-import { commandUp, commandCd, commandLs } from "./commands/index.js";
+import { commandUp, commandCd, commandLs, commandCat } from "./commands/index.js";
 
 const handleCommands = {
   up: commandUp,
   cd: commandCd,
   ls: commandLs,
+  cat: commandCat,
 };
 
 const rl = readline.createInterface({
