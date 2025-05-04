@@ -1,4 +1,5 @@
 import { state } from "./state.js";
+import { getCurrentPath } from "./utils/getCurrentPath.js";
 
 const displayWelcomeMessage = () => {
   console.log(`Welcome to the File Manager, ${state.username}!`);
@@ -9,7 +10,7 @@ const displayGoodbyeMessage = () => {
 };
 
 const displayPrompt = () => {
-  console.log(`\nYou are currently in ${state.currentDirectory}`);
+  console.log(`\nYou are currently in ${getCurrentPath()}`);
   process.stdout.write("> ");
 };
 
