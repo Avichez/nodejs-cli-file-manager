@@ -10,6 +10,7 @@ import {
   commandAdd,
   commandMkdir,
   commandRn,
+  commandCp,
 } from "./commands/index.js";
 
 const handleCommands = {
@@ -20,6 +21,7 @@ const handleCommands = {
   add: commandAdd,
   mkdir: commandMkdir,
   rn: commandRn,
+  cp: commandCp,
 };
 
 const rl = readline.createInterface({
