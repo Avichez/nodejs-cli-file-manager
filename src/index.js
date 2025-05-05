@@ -12,6 +12,7 @@ import {
   commandRn,
   commandCp,
 } from "./commands/index.js";
+import { commandMv } from "./commands/files/mv.js";
 
 const handleCommands = {
   up: commandUp,
@@ -22,6 +23,7 @@ const handleCommands = {
   mkdir: commandMkdir,
   rn: commandRn,
   cp: commandCp,
+  mv: commandMv,
 };
 
 const rl = readline.createInterface({

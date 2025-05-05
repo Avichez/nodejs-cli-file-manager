@@ -7,3 +7,4 @@ export { commandAdd } from "./files/add.js";
 export { commandMkdir } from "./files/mkdir.js";
 export { commandRn } from "./files/rn.js";
 export { commandCp } from "./files/cp.js";
+export { commandMv } from "./files/mv.js";

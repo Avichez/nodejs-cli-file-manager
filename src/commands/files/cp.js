@@ -17,15 +17,11 @@ export async function commandCp(args) {
   const destinationPath = path.resolve(destinationDirectory, `${nameWithoutExt}-copy${extension}`);
 
   try {
-    const readStream = fs.createReadStream(sourcePath);
-    await new Promise((resolve, reject) => {
-      readStream.on("error", (err) => reject(err));
-      readStream.on("open", () => resolve());
-    });
-
     await fs.promises.mkdir(destinationDirectory, { recursive: true });
 
+    const readStream = fs.createReadStream(sourcePath);
     const writeStream = fs.createWriteStream(destinationPath);
+
     await stream.pipeline(readStream, writeStream);
   } catch (error) {
     throw new Error(`Error copying file: ${error.message}`);
