@@ -13,7 +13,7 @@ class AppState {
     if (username && username.trim() !== "") {
       this._username = username.trim();
     } else {
-      console.error("Invalid username. It cannot be empty.");
+      console.error("Invalid username, using system name instead.");
     }
   }
 }
