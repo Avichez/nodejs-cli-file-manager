@@ -11,3 +11,4 @@ export { commandMv } from "./files/mv.js";
 export { commandRm } from "./files/rm.js";
 
 export { commandOs } from "./os/index.js";
+export { commandHash } from "./hash.js";

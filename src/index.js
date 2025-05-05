@@ -14,6 +14,7 @@ import {
   commandMv,
   commandRm,
   commandOs,
+  commandHash,
 } from "./commands/index.js";
 
 const handleCommands = {
@@ -28,6 +29,7 @@ const handleCommands = {
   mv: commandMv,
   rm: commandRm,
   os: commandOs,
+  hash: commandHash,
 };
 
 const rl = readline.createInterface({
