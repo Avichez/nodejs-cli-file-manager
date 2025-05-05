@@ -12,3 +12,5 @@ export { commandRm } from "./files/rm.js";
 
 export { commandOs } from "./os/index.js";
 export { commandHash } from "./hash.js";
+export { commandCompress } from "./compress.js";
+export { commandDecompress } from "./decompress.js";
