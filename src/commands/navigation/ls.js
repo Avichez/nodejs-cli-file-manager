@@ -1,10 +1,6 @@
 import fs from "node:fs/promises";
 import { getCurrentPath } from "../../utils/getCurrentPath.js";
 
-function nameWithPadEnd(name, padEndNum, placeholder = " ") {
-  return name.padEnd(padEndNum, placeholder);
-}
-
 export async function commandLs(args) {
   if (args.length !== 0) {
     throw new Error("ls command does not accept any arguments");
@@ -21,25 +17,19 @@ export async function commandLs(args) {
       }
 
       results.push({
-        name: entry.name,
-        type: entry.isDirectory() ? "directory" : "file",
+        Name: entry.name,
+        Type: entry.isDirectory() ? "directory" : "file",
       });
     }
 
     results.sort((a, b) => {
-      if (a.type === b.type) {
-        return a.name.localeCompare(b.name);
+      if (a.Type === b.Type) {
+        return a.Name.localeCompare(b.Name);
       }
-      return a.type === "directory" ? -1 : 1;
+      return a.Type === "directory" ? -1 : 1;
     });
 
-    console.log(`\nIndex | ${nameWithPadEnd("Name", padEndNum)} | Type`);
-    console.log(`------|-${nameWithPadEnd("-", padEndNum, "-")}-|----------`);
-    results.forEach((item, index) => {
-      const paddedName = nameWithPadEnd(item.name, padEndNum);
-      const paddedIndex = String(index).padEnd(5);
-      console.log(`${paddedIndex} | ${paddedName} | ${item.type}`);
-    });
+    console.table(results);
   } catch (error) {
     throw new Error(`Failed to list directory contents: ${error.message}`);
   }
