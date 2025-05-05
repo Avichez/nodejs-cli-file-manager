@@ -9,3 +9,5 @@ export { commandRn } from "./files/rn.js";
 export { commandCp } from "./files/cp.js";
 export { commandMv } from "./files/mv.js";
 export { commandRm } from "./files/rm.js";
+
+export { commandOs } from "./os/index.js";

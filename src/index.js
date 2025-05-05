@@ -13,6 +13,7 @@ import {
   commandCp,
   commandMv,
   commandRm,
+  commandOs,
 } from "./commands/index.js";
 
 const handleCommands = {
@@ -26,6 +27,7 @@ const handleCommands = {
   cp: commandCp,
   mv: commandMv,
   rm: commandRm,
+  os: commandOs,
 };
 
 const rl = readline.createInterface({
