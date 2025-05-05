@@ -8,3 +8,4 @@ export { commandMkdir } from "./files/mkdir.js";
 export { commandRn } from "./files/rn.js";
 export { commandCp } from "./files/cp.js";
 export { commandMv } from "./files/mv.js";
+export { commandRm } from "./files/rm.js";

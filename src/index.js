@@ -11,8 +11,9 @@ import {
   commandMkdir,
   commandRn,
   commandCp,
+  commandMv,
+  commandRm,
 } from "./commands/index.js";
-import { commandMv } from "./commands/files/mv.js";
 
 const handleCommands = {
   up: commandUp,
@@ -24,6 +25,7 @@ const handleCommands = {
   rn: commandRn,
   cp: commandCp,
   mv: commandMv,
+  rm: commandRm,
 };
 
 const rl = readline.createInterface({
